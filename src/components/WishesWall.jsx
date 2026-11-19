@@ -1,0 +1,225 @@
+import React, { useState, useEffect } from 'react';
+import { Heart, Send, Sparkles, MessageCircle, User } from 'lucide-react';
+import { LotusIcon, DiyaLampIcon } from './TempleIcons';
+import confetti from 'canvas-confetti';
+
+export const WishesWall = ({ isTelugu }) => {
+  const initialWishes = [
+    {
+      id: 1,
+      name: 'Mittapalli Family Elders',
+      relation: 'Vedurukuppam',
+      message: 'శ్రీ వెంకటేశ్వర స్వామి మరియు పద్మావతి అమ్మవార్ల దివ్యానుగ్రహంతో భాను ప్రకాష్ మరియు అనుషల దాంపత్యం కలకాలం ఆయురారోగ్యాలతో, అష్టైశ్వర్యాలతో వర్ధిల్లాలని మనసారా ఆశీర్వదిస్తున్నాము.',
+      date: 'Today',
+      isTeluguLang: true
+    },
+    {
+      id: 2,
+      name: 'Mummaneni Family & Relatives',
+      relation: 'Peddakammavaripalli, Puttaparthi',
+      message: 'మా ప్రియమైన అనుష, భాను ప్రకాష్ ల కళ్యాణం అత్యంత వైభవంగా జరగాలని, నూరేళ్ళూ సుఖసంతోషాలతో జీవించాలని ఆ భగవంతుని ప్రార్థిస్తున్నాము.',
+      date: 'Yesterday',
+      isTeluguLang: true
+    },
+    {
+      id: 3,
+      name: 'Bangalore Tech Friends & Colleagues',
+      relation: 'Bangalore IT Circle',
+      message: 'Heartiest congratulations to our favorite engineer duo Bhanu Prakash & Anusha! May your shared life be as seamless as clean code, zero production bugs, and endless happiness!',
+      date: '2 days ago',
+      isTeluguLang: false
+    },
+    {
+      id: 4,
+      name: 'Praneeth & Sai (Cousins)',
+      relation: 'Bengaluru',
+      message: 'So excited for the Puttaparthi wedding and Chittoor reception! Waiting for the grand Talambralu showdown! Wishing you both a lifetime of adventures and joy.',
+      date: '3 days ago',
+      isTeluguLang: false
+    }
+  ];
+
+  const [wishes, setWishes] = useState(initialWishes);
+  const [name, setName] = useState('');
+  const [relation, setRelation] = useState('');
+  const [message, setMessage] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    const saved = localStorage.getItem('bhanu_anusha_guestbook');
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        setWishes([...parsed, ...initialWishes]);
+      } catch (e) {}
+    }
+  }, []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!name.trim() || !message.trim()) return;
+
+    const newWish = {
+      id: Date.now(),
+      name: name.trim(),
+      relation: relation.trim() || (isTelugu ? 'ఆత్మీయులు' : 'Well-Wisher'),
+      message: message.trim(),
+      date: isTelugu ? 'ఇప్పుడే' : 'Just now',
+      isTeluguLang: false
+    };
+
+    const updated = [newWish, ...wishes];
+    setWishes(updated);
+    
+    // Save locally
+    const userWishes = JSON.parse(localStorage.getItem('bhanu_anusha_guestbook') || '[]');
+    localStorage.setItem('bhanu_anusha_guestbook', JSON.stringify([newWish, ...userWishes]));
+
+    setName('');
+    setRelation('');
+    setMessage('');
+    setSubmitted(true);
+
+    confetti({
+      particleCount: 50,
+      spread: 70,
+      origin: { y: 0.7 },
+      colors: ['#D4AF37', '#E11D48', '#FB7185', '#F59E0B'],
+    });
+
+    setTimeout(() => setSubmitted(false), 4000);
+  };
+
+  return (
+    <section id="wishes" className="py-16 sm:py-24 bg-[#fffdf7] relative overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        {/* Header */}
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <Heart className="w-5 h-5 text-rose-600 fill-rose-600" />
+            <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#aa771c]">
+              {isTelugu ? 'ఆశీర్వాదాల గోడ' : 'Guestbook & Wishes'}
+            </span>
+            <Heart className="w-5 h-5 text-rose-600 fill-rose-600" />
+          </div>
+
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#680b1e]">
+            {isTelugu ? 'వధూవరులకు మీ శుభాకాంక్షలు' : 'Blessings for Bhanu Prakash & Anusha'}
+          </h2>
+          <p className="font-serif italic text-stone-600 text-sm sm:text-base mt-2">
+            {isTelugu
+              ? 'మీ ఆత్మీయ సందేశాన్ని ఇక్కడ నమోదు చేసి నూతన దంపతులను ఆశీర్వదించండి.'
+              : 'Leave a sweet message, blessing, or memory for the bride and groom.'}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          {/* Wish Submission Form */}
+          <div className="lg:col-span-5 bg-gradient-to-b from-amber-50/60 to-white p-6 sm:p-8 rounded-3xl border-2 border-[#d4af37]/70 shadow-xl">
+            <h3 className="font-serif text-xl font-bold text-[#680b1e] mb-1 flex items-center gap-2">
+              <Sparkles className="w-4 h-4 text-[#d4af37]" />
+              <span>{isTelugu ? 'శుభాకాంక్ష సందేశం రాయండి' : 'Send Your Blessings'}</span>
+            </h3>
+            <p className="text-xs text-stone-600 mb-6">
+              {isTelugu ? 'మీ సందేశం నేరుగా వధూవరుల స్క్రీన్‌పై కనిపిస్తుంది.' : 'Your heartfelt words will be cherished by the couple forever.'}
+            </p>
+
+            {submitted && (
+              <div className="mb-4 p-3 bg-emerald-50 border border-emerald-300 text-emerald-800 rounded-xl text-xs font-semibold flex items-center gap-2 animate-fadeIn">
+                <Sparkles className="w-4 h-4 text-emerald-600" />
+                <span>{isTelugu ? 'మీ శుభాకాంక్షలు విజయవంతంగా నమోదయ్యాయి! ధన్యవాదాలు.' : 'Thank you! Your blessings have been posted to the wall.'}</span>
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label className="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1">
+                  {isTelugu ? 'మీ పూర్తి పేరు *' : 'Your Full Name *'}
+                </label>
+                <input
+                  type="text"
+                  required
+                  placeholder={isTelugu ? 'ఉదా: రమేష్ బాబు' : 'e.g., Ramesh & Family'}
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full px-4 py-2.5 text-sm rounded-xl border border-stone-200 focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/20 outline-none transition-all"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1">
+                  {isTelugu ? 'సంబంధం / ఊరు (ఐచ్ఛికం)' : 'Relation / City (Optional)'}
+                </label>
+                <input
+                  type="text"
+                  placeholder={isTelugu ? 'ఉదా: చిత్తూరు / స్నేహితుడు' : 'e.g., Bangalore / College Friend'}
+                  value={relation}
+                  onChange={(e) => setRelation(e.target.value)}
+                  className="w-full px-4 py-2.5 text-sm rounded-xl border border-stone-200 focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/20 outline-none transition-all"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1">
+                  {isTelugu ? 'మీ ఆశీర్వాదం / సందేశం *' : 'Your Message / Blessings *'}
+                </label>
+                <textarea
+                  required
+                  rows={4}
+                  placeholder={isTelugu ? 'నూతన దంపతులకు మీ మనసులోని ఆశీస్సులు తెలపండి...' : 'Share your warm wishes and love for Bhanu Prakash & Anusha...'}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  className="w-full px-4 py-2.5 text-sm rounded-xl border border-stone-200 focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/20 outline-none transition-all resize-none"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                className="w-full py-3 rounded-xl bg-gradient-to-r from-[#680b1e] via-[#881329] to-[#680b1e] text-[#f9e79f] font-serif font-bold text-xs uppercase tracking-wider shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2 border border-[#d4af37]"
+              >
+                <Send className="w-4 h-4 text-amber-300" />
+                <span>{isTelugu ? 'సందేశాన్ని పంపండి' : 'Post Blessings'}</span>
+              </button>
+            </form>
+          </div>
+
+          {/* Wishes Display Wall */}
+          <div className="lg:col-span-7 space-y-4 max-h-[580px] overflow-y-auto pr-2 no-scrollbar">
+            {wishes.map((w) => (
+              <div
+                key={w.id}
+                className="p-5 rounded-2xl bg-white border border-amber-200 shadow-md hover:shadow-lg transition-shadow relative"
+              >
+                <div className="flex items-center justify-between border-b border-amber-100 pb-2.5 mb-2.5">
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[#680b1e] to-[#881329] text-amber-200 flex items-center justify-center font-bold text-xs">
+                      {w.name.charAt(0)}
+                    </div>
+                    <div>
+                      <h4 className="font-serif font-bold text-sm text-[#680b1e]">
+                        {w.name}
+                      </h4>
+                      <span className="text-[10px] text-stone-500 font-medium">
+                        {w.relation}
+                      </span>
+                    </div>
+                  </div>
+                  <span className="text-[10px] text-stone-400 font-mono">{w.date}</span>
+                </div>
+
+                <p className="text-xs sm:text-sm text-stone-700 leading-relaxed font-sans">
+                  "{w.message}"
+                </p>
+              </div>
+            ))}
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  );
+};
+

@@ -12,6 +12,7 @@ import { FamilySection } from './components/FamilySection';
 import { Footer } from './components/Footer';
 import { RSVPModal } from './components/RSVPModal';
 import { InvitationCover } from './components/InvitationCover';
+import { AmbientRoyalEffects } from './components/AmbientRoyalEffects';
 
 export function App() {
   const [isTelugu, setIsTelugu] = useState(false);
@@ -19,7 +20,10 @@ export function App() {
   const [isInvitationOpen, setIsInvitationOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#fcf9f2] text-stone-900 selection:bg-amber-200 selection:text-amber-900 relative">
+    <div className="min-h-screen bg-[#140206] text-amber-50 selection:bg-[#d4af37] selection:text-[#35030d] relative">
+      {/* Ambient Royal Floating Petals & Golden Embers */}
+      <AmbientRoyalEffects />
+
       {/* Royal Invitation Cover Screen (Inspired by reference card) */}
       {!isInvitationOpen && (
         <InvitationCover 

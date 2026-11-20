@@ -51,8 +51,8 @@ export const InvitationCover = ({ onOpen, isTelugu }) => {
         <div className="absolute inset-3 sm:inset-4 rounded-[26px] sm:rounded-[30px] border border-[#d4af37]/50 pointer-events-none" />
 
         {/* Top Sacred Medallion / Circular Emblem with Couple Photo */}
-        <div className="relative z-10 pt-4 flex flex-col items-center">
-          <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full p-1 bg-gradient-to-b from-[#f9e79f] via-[#d4af37] to-[#aa771c] shadow-[0_0_30px_rgba(212,175,55,0.45)] flex items-center justify-center mb-4 group">
+        <div className="relative z-10 pt-4 flex flex-col items-center animate-float-subtle">
+          <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full p-1 bg-gradient-to-b from-[#f9e79f] via-[#d4af37] to-[#aa771c] shadow-[0_0_30px_rgba(212,175,55,0.45)] flex items-center justify-center mb-4 group royal-glow">
             {/* Shimmer ring */}
             <div className="absolute inset-0 rounded-full border border-amber-300/40 animate-ping opacity-25 pointer-events-none"></div>
             
@@ -105,10 +105,10 @@ export const InvitationCover = ({ onOpen, isTelugu }) => {
             "We request the pleasure of your company to grace this auspicious occasion and bless the new couple."
           </p>
 
-          {/* The Golden Button (Matching reference screenshot) */}
+          {/* The Golden Button (Matching reference screenshot) with Gleam Animation */}
           <button
             onClick={handleOpenInvitation}
-            className="w-full max-w-xs sm:max-w-sm py-3.5 sm:py-4 px-6 rounded-full bg-gradient-to-r from-[#b8860b] via-[#d4af37] to-[#aa771c] hover:from-[#d4af37] hover:via-[#f9e79f] hover:to-[#d4af37] text-[#35030d] font-bold text-xs sm:text-sm uppercase tracking-[0.18em] shadow-[0_8px_25px_rgba(212,175,55,0.4)] hover:shadow-[0_10px_35px_rgba(212,175,55,0.6)] transform hover:scale-[1.03] active:scale-[0.98] transition-all flex flex-col items-center justify-center border border-amber-200 group"
+            className="w-full max-w-xs sm:max-w-sm py-3.5 sm:py-4 px-6 rounded-full bg-gradient-to-r from-[#b8860b] via-[#d4af37] to-[#aa771c] hover:from-[#d4af37] hover:via-[#f9e79f] hover:to-[#d4af37] text-[#35030d] font-bold text-xs sm:text-sm uppercase tracking-[0.18em] shadow-[0_8px_25px_rgba(212,175,55,0.4)] hover:shadow-[0_10px_35px_rgba(212,175,55,0.6)] transform hover:scale-[1.03] active:scale-[0.98] transition-all flex flex-col items-center justify-center border border-amber-200 group gleam-overlay royal-card"
           >
             <div className="flex items-center gap-2">
               <Sparkles className="w-4 h-4 text-[#470511] group-hover:rotate-45 transition-transform" />

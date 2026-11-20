@@ -56,16 +56,16 @@ export const Countdown = ({ isTelugu }) => {
   ];
 
   return (
-    <section className="py-12 bg-gradient-to-b from-[#470511] via-[#680b1e] to-[#470511] text-white relative overflow-hidden">
+    <section className="py-14 bg-gradient-to-b from-[#140206] via-[#24040c] to-[#160207] text-white relative overflow-hidden">
       {/* Decorative background accents */}
-      <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:16px_16px]" />
+      <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:16px_16px]" />
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center">
         
         {/* Title */}
         <div className="flex items-center justify-center gap-3 mb-2">
           <DiyaLampIcon className="w-6 h-10" />
-          <h2 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-[#f9e79f] tracking-wide">
+          <h2 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#ffe58f] via-[#d4af37] to-[#ffe58f] tracking-wide">
             {isTelugu ? 'కళ్యాణ ఘడియల లెక్కింపు' : 'Counting Down to the Sacred Muhurtham'}
           </h2>
           <DiyaLampIcon className="w-6 h-10" />
@@ -82,12 +82,12 @@ export const Countdown = ({ isTelugu }) => {
           {timerItems.map((item, idx) => (
             <div
               key={idx}
-              className="relative p-4 sm:p-5 rounded-2xl bg-black/30 backdrop-blur-md border border-[#d4af37]/60 shadow-xl flex flex-col items-center justify-center group hover:border-[#f9e79f] transition-all transform hover:-translate-y-1"
+              className="relative p-4 sm:p-5 rounded-2xl bg-[#1e030a]/80 backdrop-blur-md border border-[#d4af37]/60 shadow-[0_10px_30px_rgba(0,0,0,0.7)] flex flex-col items-center justify-center group hover:border-[#f9e79f] transition-all transform hover:-translate-y-1.5 royal-card gleam-overlay"
             >
               <div className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-[#fff] via-[#f9e79f] to-[#d4af37] drop-shadow-md">
                 {String(item.value).padStart(2, '0')}
               </div>
-              <span className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-amber-200/80 mt-1">
+              <span className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-amber-200 mt-1">
                 {item.label}
               </span>
             </div>
@@ -98,9 +98,9 @@ export const Countdown = ({ isTelugu }) => {
         <div className="mt-8 flex justify-center">
           <button
             onClick={addToCalendar}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#d4af37] to-[#aa771c] text-[#470511] font-semibold text-xs sm:text-sm shadow-lg hover:shadow-amber-400/30 transition-all transform hover:scale-105"
+            className="flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#b8860b] via-[#d4af37] to-[#aa771c] text-[#35030d] font-bold text-xs sm:text-sm shadow-lg hover:shadow-amber-400/40 transition-all transform hover:scale-105 gleam-overlay royal-card border border-amber-200"
           >
-            <Calendar className="w-4 h-4 text-[#470511]" />
+            <Calendar className="w-4 h-4 text-[#35030d]" />
             <span>{isTelugu ? 'క్యాలెండర్‌లో గుర్తుంచుకోండి (+Google Calendar)' : 'Add to Google Calendar'}</span>
           </button>
         </div>

@@ -59,23 +59,23 @@ export const VedicRituals = ({ isTelugu }) => {
   ];
 
   return (
-    <section id="rituals" className="py-16 sm:py-24 bg-[#fffdf7] relative">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <section id="rituals" className="py-16 sm:py-24 bg-[#140206] relative overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-14">
           <div className="flex items-center justify-center gap-2 mb-2">
             <LotusIcon className="w-6 h-6" />
-            <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#aa771c]">
+            <span className="text-xs uppercase tracking-[0.2em] font-bold text-amber-300">
               {isTelugu ? 'వేద సంస్కృతి' : 'Vedic Traditions'}
             </span>
             <LotusIcon className="w-6 h-6" />
           </div>
 
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#680b1e]">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#ffe58f] via-[#d4af37] to-[#ffe58f]">
             {isTelugu ? 'పవిత్ర తెలుగు వివాహ సంప్రదాయాలు' : 'Sacred Telugu Wedding Rituals'}
           </h2>
-          <p className="font-serif italic text-stone-600 text-sm sm:text-base mt-2">
+          <p className="font-serif italic text-amber-200/80 text-sm sm:text-base mt-2">
             {isTelugu
               ? 'శతాబ్దాల నాటి సంప్రదాయాల వెనుక దాగి ఉన్న అంతరార్థం మరియు ఆధ్యాత్మిక ప్రాముఖ్యత.'
               : 'Every sacred step and chant carries timeless spiritual wisdom for a blessed marital journey.'}
@@ -90,8 +90,8 @@ export const VedicRituals = ({ isTelugu }) => {
               onClick={() => setActiveTab(idx)}
               className={`px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide whitespace-nowrap transition-all flex items-center gap-2 border ${
                 activeTab === idx
-                  ? 'bg-[#680b1e] text-[#f9e79f] border-[#d4af37] shadow-lg scale-105'
-                  : 'bg-white text-stone-700 border-stone-200 hover:bg-amber-50'
+                  ? 'bg-gradient-to-r from-[#b8860b] via-[#d4af37] to-[#aa771c] text-[#35030d] font-bold border-amber-200 shadow-lg scale-105'
+                  : 'bg-[#24040c] text-amber-200/90 border-[#d4af37]/40 hover:bg-[#320611]'
               }`}
             >
               <span>{ritual.title}</span>
@@ -100,11 +100,11 @@ export const VedicRituals = ({ isTelugu }) => {
         </div>
 
         {/* Active Ritual Spotlight Card */}
-        <div className="max-w-4xl mx-auto bg-gradient-to-br from-white via-amber-50/40 to-white rounded-3xl p-6 sm:p-10 border-2 border-[#d4af37] shadow-2xl relative overflow-hidden">
+        <div className="max-w-4xl mx-auto bg-gradient-to-br from-[#2a050f] via-[#1e030a] to-[#150206] rounded-3xl p-6 sm:p-10 border-2 border-[#d4af37] shadow-[0_20px_50px_rgba(0,0,0,0.85)] relative overflow-hidden royal-card">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
             
             {/* Visual Icon Column */}
-            <div className="md:col-span-4 flex flex-col items-center justify-center p-6 bg-gradient-to-b from-[#680b1e] to-[#470511] rounded-2xl text-amber-200 shadow-inner border border-[#d4af37]/60 text-center">
+            <div className="md:col-span-4 flex flex-col items-center justify-center p-6 bg-gradient-to-b from-[#3a0612] to-[#1e0208] rounded-2xl text-amber-200 shadow-inner border border-[#d4af37]/60 text-center">
               <div className="p-4 rounded-full bg-white/10 mb-3 backdrop-blur-sm">
                 {rituals[activeTab].icon}
               </div>
@@ -118,17 +118,17 @@ export const VedicRituals = ({ isTelugu }) => {
 
             {/* Description Column */}
             <div className="md:col-span-8 space-y-3">
-              <span className="text-xs uppercase tracking-widest text-[#aa771c] font-bold block">
+              <span className="text-xs uppercase tracking-widest text-amber-300 font-bold block">
                 {rituals[activeTab].tagline}
               </span>
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#680b1e]">
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#fff] via-[#f9e79f] to-[#d4af37]">
                 {rituals[activeTab].title}
               </h3>
-              <p className="text-stone-700 text-sm sm:text-base leading-relaxed font-sans">
+              <p className="text-amber-100/90 text-sm sm:text-base leading-relaxed font-sans">
                 {rituals[activeTab].desc}
               </p>
 
-              <div className="pt-4 border-t border-amber-200/60 flex items-center gap-2 text-xs text-stone-500">
+              <div className="pt-4 border-t border-[#d4af37]/30 flex items-center gap-2 text-xs text-amber-300/80">
                 <DiyaLampIcon className="w-4 h-6" />
                 <span className="font-serif italic">
                   {isTelugu ? 'నవంబర్ 29న సాయి ఆరామం వేదికపై ఈ పవిత్ర వేడుక జరగనుంది.' : 'To be solemnized at Sai Aramam Function Hall, Puttaparthi on Nov 29, 2026.'}

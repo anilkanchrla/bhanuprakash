@@ -47,7 +47,7 @@ export const InteractiveBlessings = ({ isTelugu }) => {
   };
 
   return (
-    <section className="py-16 sm:py-20 bg-gradient-to-b from-[#680b1e] via-[#470511] to-[#680b1e] text-white relative overflow-hidden">
+    <section className="py-16 sm:py-20 bg-gradient-to-b from-[#140206] via-[#24040c] to-[#140206] text-white relative overflow-hidden">
       {/* Background sacred patterns */}
       <div className="absolute inset-0 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:20px_20px] opacity-15 pointer-events-none" />
 
@@ -59,7 +59,7 @@ export const InteractiveBlessings = ({ isTelugu }) => {
           <span>{isTelugu ? 'దైవిక ఆశీస్సులు' : 'Digital Temple Offerings'}</span>
         </div>
 
-        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#f9e79f] mb-3">
+        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#ffe58f] via-[#d4af37] to-[#ffe58f] mb-3">
           {isTelugu ? 'దీపారాధన & ఘంటానాదం తో ఆశీర్వదించండి' : 'Offer Your Sacred Blessings'}
         </h2>
         
@@ -73,7 +73,7 @@ export const InteractiveBlessings = ({ isTelugu }) => {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
           
           {/* Card 1: Light the Diya */}
-          <div className="p-6 rounded-3xl bg-black/40 backdrop-blur-md border border-[#d4af37]/60 shadow-xl flex flex-col items-center justify-between">
+          <div className="p-6 rounded-3xl bg-[#1e030a]/80 backdrop-blur-md border border-[#d4af37]/60 shadow-2xl flex flex-col items-center justify-between royal-card">
             <div className="flex flex-col items-center">
               <div className="my-2 relative">
                 <DiyaLampIcon className="w-16 h-24" isLit={true} />
@@ -108,7 +108,7 @@ export const InteractiveBlessings = ({ isTelugu }) => {
           </div>
 
           {/* Card 2: Ring the Temple Bell */}
-          <div className="p-6 rounded-3xl bg-black/40 backdrop-blur-md border border-[#d4af37]/60 shadow-xl flex flex-col items-center justify-between">
+          <div className="p-6 rounded-3xl bg-[#1e030a]/80 backdrop-blur-md border border-[#d4af37]/60 shadow-2xl flex flex-col items-center justify-between royal-card">
             <div className="flex flex-col items-center">
               <div className="my-2 p-4 rounded-full bg-amber-400/10 border border-amber-400/30">
                 <Bell className={`w-14 h-14 text-amber-300 transition-transform ${isRinging ? 'rotate-12 scale-110' : ''}`} />

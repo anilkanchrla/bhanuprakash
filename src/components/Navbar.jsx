@@ -40,19 +40,19 @@ export const Navbar = ({ isTelugu, setIsTelugu, onOpenRsvp }) => {
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#fffdf7]/95 backdrop-blur-md shadow-md py-2 border-b border-[#d4af37]/40'
-          : 'bg-[#fffdf7]/80 backdrop-blur-sm py-3 border-b border-[#d4af37]/20'
+          ? 'bg-[#1a0207]/95 backdrop-blur-md shadow-2xl py-2 border-b border-[#d4af37]/50'
+          : 'bg-[#140206]/85 backdrop-blur-sm py-3 border-b border-[#d4af37]/30'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand / Logo */}
         <a href="#" className="flex items-center gap-2 group">
-          <TirunamamIcon className="w-8 h-6 text-[#881329]" />
+          <TirunamamIcon className="w-8 h-6 text-[#d4af37]" />
           <div className="flex flex-col">
-            <span className="font-serif text-base sm:text-lg font-bold tracking-wide text-[#680b1e] group-hover:text-[#881329] transition-colors">
+            <span className="font-serif text-base sm:text-lg font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#ffe58f] via-[#d4af37] to-[#ffe58f] group-hover:brightness-110 transition-all">
               Bhanu Prakash & Anusha
             </span>
-            <span className="text-[9px] tracking-widest uppercase font-semibold text-[#aa771c]">
+            <span className="text-[9px] tracking-widest uppercase font-semibold text-amber-300/80">
               {isTelugu ? 'కళ్యాణ మహోత్సవం' : 'Kalyanamasthu • 29 Nov 2026'}
             </span>
           </div>
@@ -64,7 +64,7 @@ export const Navbar = ({ isTelugu, setIsTelugu, onOpenRsvp }) => {
             <a
               key={link.name}
               href={link.href}
-              className="text-stone-700 hover:text-[#881329] font-medium text-xs lg:text-sm tracking-wide transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#d4af37] hover:after:w-full after:transition-all"
+              className="text-amber-100/85 hover:text-[#f9e79f] font-medium text-xs lg:text-sm tracking-wide transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#d4af37] hover:after:w-full after:transition-all"
             >
               {link.name}
             </a>
@@ -73,10 +73,10 @@ export const Navbar = ({ isTelugu, setIsTelugu, onOpenRsvp }) => {
           {/* Telugu / English Language Switch */}
           <button
             onClick={() => setIsTelugu(!isTelugu)}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-[#d4af37] text-stone-800 text-xs font-semibold hover:bg-amber-50 shadow-sm transition-all"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#2a040d] border border-[#d4af37]/70 text-[#f9e79f] text-xs font-semibold hover:bg-[#3d0715] shadow-sm transition-all"
             title="Toggle Language"
           >
-            <Languages className="w-3.5 h-3.5 text-[#881329]" />
+            <Languages className="w-3.5 h-3.5 text-amber-300" />
             <span>{isTelugu ? 'English' : 'తెలుగు'}</span>
           </button>
 
@@ -85,8 +85,8 @@ export const Navbar = ({ isTelugu, setIsTelugu, onOpenRsvp }) => {
             onClick={toggleMusic}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-xs font-semibold shadow-sm transition-all ${
               isPlaying
-                ? 'bg-[#680b1e] text-[#f9e79f] border-[#d4af37]'
-                : 'bg-white text-stone-700 border-stone-300 hover:bg-stone-50'
+                ? 'bg-gradient-to-r from-[#680b1e] to-[#881329] text-[#f9e79f] border-[#d4af37]'
+                : 'bg-[#22030b] text-amber-200/80 border-[#d4af37]/40 hover:bg-[#2e050f]'
             }`}
             title="Toggle Wedding Song"
           >
@@ -102,7 +102,7 @@ export const Navbar = ({ isTelugu, setIsTelugu, onOpenRsvp }) => {
               </>
             ) : (
               <>
-                <VolumeX className="w-3.5 h-3.5 text-stone-500" />
+                <VolumeX className="w-3.5 h-3.5 text-amber-300/60" />
                 <span className="text-[11px]">Muted</span>
               </>
             )}
@@ -111,9 +111,9 @@ export const Navbar = ({ isTelugu, setIsTelugu, onOpenRsvp }) => {
           {/* RSVP Button */}
           <button
             onClick={onOpenRsvp}
-            className="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#680b1e] to-[#881329] text-[#f9e79f] text-xs font-semibold tracking-wider uppercase shadow-md hover:shadow-lg hover:from-[#881329] hover:to-[#a11833] transition-all transform hover:scale-105 border border-[#d4af37]/60"
+            className="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#b8860b] via-[#d4af37] to-[#aa771c] text-[#35030d] text-xs font-bold tracking-wider uppercase shadow-md hover:shadow-lg hover:scale-105 transition-all transform border border-amber-200"
           >
-            <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+            <Sparkles className="w-3.5 h-3.5 text-[#35030d]" />
             <span>{isTelugu ? 'ఆశీర్వదించండి' : 'RSVP'}</span>
           </button>
         </nav>
@@ -124,7 +124,7 @@ export const Navbar = ({ isTelugu, setIsTelugu, onOpenRsvp }) => {
           <button
             onClick={toggleMusic}
             className={`p-1.5 rounded-full border shadow-sm transition-colors ${
-              isPlaying ? 'bg-[#680b1e] text-[#f9e79f] border-[#d4af37]' : 'bg-white text-stone-600 border-stone-300'
+              isPlaying ? 'bg-[#680b1e] text-[#f9e79f] border-[#d4af37]' : 'bg-[#22030b] text-amber-200/80 border-[#d4af37]/40'
             }`}
             aria-label="Toggle Wedding Music"
           >
@@ -134,7 +134,7 @@ export const Navbar = ({ isTelugu, setIsTelugu, onOpenRsvp }) => {
           {/* Mobile Language Toggle */}
           <button
             onClick={() => setIsTelugu(!isTelugu)}
-            className="px-2.5 py-1 rounded-full bg-white border border-[#d4af37] text-stone-800 text-[11px] font-semibold"
+            className="px-2.5 py-1 rounded-full bg-[#2a040d] border border-[#d4af37]/70 text-[#f9e79f] text-[11px] font-semibold"
           >
             {isTelugu ? 'ENG' : 'తెలుగు'}
           </button>
@@ -142,7 +142,7 @@ export const Navbar = ({ isTelugu, setIsTelugu, onOpenRsvp }) => {
           {/* Mobile RSVP */}
           <button
             onClick={onOpenRsvp}
-            className="px-3 py-1 rounded-full bg-[#680b1e] text-[#f9e79f] text-[11px] font-semibold"
+            className="px-3 py-1 rounded-full bg-gradient-to-r from-[#b8860b] via-[#d4af37] to-[#aa771c] text-[#35030d] text-[11px] font-bold"
           >
             RSVP
           </button>
@@ -150,7 +150,7 @@ export const Navbar = ({ isTelugu, setIsTelugu, onOpenRsvp }) => {
           {/* Mobile Hamburger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-1.5 text-[#680b1e] focus:outline-none"
+            className="p-1.5 text-amber-200 hover:text-white focus:outline-none"
             aria-label="Toggle Menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -160,14 +160,14 @@ export const Navbar = ({ isTelugu, setIsTelugu, onOpenRsvp }) => {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#fffdf7] border-b border-[#d4af37] px-6 py-4 shadow-xl">
+        <div className="md:hidden bg-[#1c0208]/98 border-b border-[#d4af37]/60 px-6 py-4 shadow-2xl">
           <div className="flex flex-col space-y-3">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-stone-800 font-medium py-1.5 border-b border-stone-100 hover:text-[#881329] text-sm"
+                className="text-amber-100 font-medium py-1.5 border-b border-[#d4af37]/20 hover:text-[#f9e79f] text-sm"
               >
                 {link.name}
               </a>

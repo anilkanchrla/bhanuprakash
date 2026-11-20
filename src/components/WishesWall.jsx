@@ -91,23 +91,23 @@ export const WishesWall = ({ isTelugu }) => {
   };
 
   return (
-    <section id="wishes" className="py-16 sm:py-24 bg-[#fffdf7] relative overflow-hidden">
+    <section id="wishes" className="py-16 sm:py-24 bg-[#160207] relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-14">
           <div className="flex items-center justify-center gap-2 mb-2">
-            <Heart className="w-5 h-5 text-rose-600 fill-rose-600" />
-            <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#aa771c]">
+            <Heart className="w-5 h-5 text-rose-500 fill-rose-500" />
+            <span className="text-xs uppercase tracking-[0.2em] font-bold text-amber-300">
               {isTelugu ? 'ఆశీర్వాదాల గోడ' : 'Guestbook & Wishes'}
             </span>
-            <Heart className="w-5 h-5 text-rose-600 fill-rose-600" />
+            <Heart className="w-5 h-5 text-rose-500 fill-rose-500" />
           </div>
 
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#680b1e]">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#ffe58f] via-[#d4af37] to-[#ffe58f]">
             {isTelugu ? 'వధూవరులకు మీ శుభాకాంక్షలు' : 'Blessings for Bhanu Prakash & Anusha'}
           </h2>
-          <p className="font-serif italic text-stone-600 text-sm sm:text-base mt-2">
+          <p className="font-serif italic text-amber-200/80 text-sm sm:text-base mt-2">
             {isTelugu
               ? 'మీ ఆత్మీయ సందేశాన్ని ఇక్కడ నమోదు చేసి నూతన దంపతులను ఆశీర్వదించండి.'
               : 'Leave a sweet message, blessing, or memory for the bride and groom.'}
@@ -117,25 +117,25 @@ export const WishesWall = ({ isTelugu }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Wish Submission Form */}
-          <div className="lg:col-span-5 bg-gradient-to-b from-amber-50/60 to-white p-6 sm:p-8 rounded-3xl border-2 border-[#d4af37]/70 shadow-xl">
-            <h3 className="font-serif text-xl font-bold text-[#680b1e] mb-1 flex items-center gap-2">
+          <div className="lg:col-span-5 bg-gradient-to-b from-[#28050e] via-[#1e030a] to-[#140206] p-6 sm:p-8 rounded-3xl border-2 border-[#d4af37]/70 shadow-2xl royal-card">
+            <h3 className="font-serif text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#fff] via-[#f9e79f] to-[#d4af37] mb-1 flex items-center gap-2">
               <Sparkles className="w-4 h-4 text-[#d4af37]" />
               <span>{isTelugu ? 'శుభాకాంక్ష సందేశం రాయండి' : 'Send Your Blessings'}</span>
             </h3>
-            <p className="text-xs text-stone-600 mb-6">
+            <p className="text-xs text-amber-200/70 mb-6">
               {isTelugu ? 'మీ సందేశం నేరుగా వధూవరుల స్క్రీన్‌పై కనిపిస్తుంది.' : 'Your heartfelt words will be cherished by the couple forever.'}
             </p>
 
             {submitted && (
-              <div className="mb-4 p-3 bg-emerald-50 border border-emerald-300 text-emerald-800 rounded-xl text-xs font-semibold flex items-center gap-2 animate-fadeIn">
-                <Sparkles className="w-4 h-4 text-emerald-600" />
+              <div className="mb-4 p-3 bg-emerald-950/80 border border-emerald-400 text-emerald-200 rounded-xl text-xs font-semibold flex items-center gap-2 animate-fadeIn">
+                <Sparkles className="w-4 h-4 text-emerald-400" />
                 <span>{isTelugu ? 'మీ శుభాకాంక్షలు విజయవంతంగా నమోదయ్యాయి! ధన్యవాదాలు.' : 'Thank you! Your blessings have been posted to the wall.'}</span>
               </div>
             )}
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1">
+                <label className="block text-xs font-semibold text-amber-200 uppercase tracking-wider mb-1">
                   {isTelugu ? 'మీ పూర్తి పేరు *' : 'Your Full Name *'}
                 </label>
                 <input
@@ -144,12 +144,12 @@ export const WishesWall = ({ isTelugu }) => {
                   placeholder={isTelugu ? 'ఉదా: రమేష్ బాబు' : 'e.g., Ramesh & Family'}
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full px-4 py-2.5 text-sm rounded-xl border border-stone-200 focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/20 outline-none transition-all"
+                  className="w-full px-4 py-2.5 text-sm rounded-xl bg-[#140206] border border-[#d4af37]/50 text-amber-100 placeholder:text-amber-200/40 focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/20 outline-none transition-all"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1">
+                <label className="block text-xs font-semibold text-amber-200 uppercase tracking-wider mb-1">
                   {isTelugu ? 'సంబంధం / ఊరు (ఐచ్ఛికం)' : 'Relation / City (Optional)'}
                 </label>
                 <input
@@ -157,12 +157,12 @@ export const WishesWall = ({ isTelugu }) => {
                   placeholder={isTelugu ? 'ఉదా: చిత్తూరు / స్నేహితుడు' : 'e.g., Bangalore / College Friend'}
                   value={relation}
                   onChange={(e) => setRelation(e.target.value)}
-                  className="w-full px-4 py-2.5 text-sm rounded-xl border border-stone-200 focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/20 outline-none transition-all"
+                  className="w-full px-4 py-2.5 text-sm rounded-xl bg-[#140206] border border-[#d4af37]/50 text-amber-100 placeholder:text-amber-200/40 focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/20 outline-none transition-all"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1">
+                <label className="block text-xs font-semibold text-amber-200 uppercase tracking-wider mb-1">
                   {isTelugu ? 'మీ ఆశీర్వాదం / సందేశం *' : 'Your Message / Blessings *'}
                 </label>
                 <textarea
@@ -171,15 +171,15 @@ export const WishesWall = ({ isTelugu }) => {
                   placeholder={isTelugu ? 'నూతన దంపతులకు మీ మనసులోని ఆశీస్సులు తెలపండి...' : 'Share your warm wishes and love for Bhanu Prakash & Anusha...'}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  className="w-full px-4 py-2.5 text-sm rounded-xl border border-stone-200 focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/20 outline-none transition-all resize-none"
+                  className="w-full px-4 py-2.5 text-sm rounded-xl bg-[#140206] border border-[#d4af37]/50 text-amber-100 placeholder:text-amber-200/40 focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/20 outline-none transition-all resize-none"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full py-3 rounded-xl bg-gradient-to-r from-[#680b1e] via-[#881329] to-[#680b1e] text-[#f9e79f] font-serif font-bold text-xs uppercase tracking-wider shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2 border border-[#d4af37]"
+                className="w-full py-3 rounded-xl bg-gradient-to-r from-[#b8860b] via-[#d4af37] to-[#aa771c] text-[#35030d] font-serif font-bold text-xs uppercase tracking-wider shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2 border border-amber-200"
               >
-                <Send className="w-4 h-4 text-amber-300" />
+                <Send className="w-4 h-4 text-[#35030d]" />
                 <span>{isTelugu ? 'సందేశాన్ని పంపండి' : 'Post Blessings'}</span>
               </button>
             </form>
@@ -190,26 +190,26 @@ export const WishesWall = ({ isTelugu }) => {
             {wishes.map((w) => (
               <div
                 key={w.id}
-                className="p-5 rounded-2xl bg-white border border-amber-200 shadow-md hover:shadow-lg transition-shadow relative"
+                className="p-5 rounded-2xl bg-gradient-to-b from-[#24040c] to-[#180208] border border-[#d4af37]/50 shadow-xl relative text-amber-100"
               >
-                <div className="flex items-center justify-between border-b border-amber-100 pb-2.5 mb-2.5">
+                <div className="flex items-center justify-between border-b border-[#d4af37]/30 pb-2.5 mb-2.5">
                   <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[#680b1e] to-[#881329] text-amber-200 flex items-center justify-center font-bold text-xs">
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[#b8860b] to-[#d4af37] text-[#35030d] flex items-center justify-center font-bold text-xs shadow">
                       {w.name.charAt(0)}
                     </div>
                     <div>
-                      <h4 className="font-serif font-bold text-sm text-[#680b1e]">
+                      <h4 className="font-serif font-bold text-sm text-[#f9e79f]">
                         {w.name}
                       </h4>
-                      <span className="text-[10px] text-stone-500 font-medium">
+                      <span className="text-[10px] text-amber-200/70 font-medium">
                         {w.relation}
                       </span>
                     </div>
                   </div>
-                  <span className="text-[10px] text-stone-400 font-mono">{w.date}</span>
+                  <span className="text-[10px] text-amber-300/60 font-mono">{w.date}</span>
                 </div>
 
-                <p className="text-xs sm:text-sm text-stone-700 leading-relaxed font-sans">
+                <p className="text-xs sm:text-sm text-amber-100/90 leading-relaxed font-sans">
                   "{w.message}"
                 </p>
               </div>

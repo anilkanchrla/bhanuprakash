@@ -12,9 +12,9 @@ import { Calendar, Clock, MapPin, Heart, Sparkles, ChevronDown } from 'lucide-re
 
 export const Hero = ({ isTelugu, onOpenRsvp }) => {
   return (
-    <section className="relative min-h-screen pt-20 pb-16 flex flex-col justify-between overflow-hidden temple-motif-bg">
+    <section className="relative min-h-screen pt-28 sm:pt-32 md:pt-32 pb-16 flex flex-col justify-between overflow-hidden temple-motif-bg">
       {/* Decorative Traditional Toran at top */}
-      <div className="absolute top-16 left-0 right-0 z-10 pointer-events-none">
+      <div className="absolute top-14 sm:top-16 left-0 right-0 z-10 pointer-events-none">
         <ToranGarland />
       </div>
 
@@ -22,13 +22,13 @@ export const Hero = ({ isTelugu, onOpenRsvp }) => {
       <div className="absolute inset-0 bg-radial-gradient from-[#420713]/60 via-[#1e030a]/80 to-[#140206] pointer-events-none" />
 
       {/* Floating Side Gopurams */}
-      <div className="hidden lg:block absolute left-4 top-24 bottom-12 w-28 opacity-25 pointer-events-none">
+      <div className="hidden lg:block absolute left-4 top-28 bottom-12 w-28 opacity-25 pointer-events-none">
         <TempleGopuramIcon className="w-full h-auto text-[#d4af37]" />
         <div className="mt-8 flex justify-center">
           <DiyaLampIcon className="w-12 h-20" isLit={true} />
         </div>
       </div>
-      <div className="hidden lg:block absolute right-4 top-24 bottom-12 w-28 opacity-25 pointer-events-none">
+      <div className="hidden lg:block absolute right-4 top-28 bottom-12 w-28 opacity-25 pointer-events-none">
         <TempleGopuramIcon className="w-full h-auto text-[#d4af37]" />
         <div className="mt-8 flex justify-center">
           <DiyaLampIcon className="w-12 h-20" isLit={true} />
@@ -39,7 +39,7 @@ export const Hero = ({ isTelugu, onOpenRsvp }) => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center relative z-20 my-auto">
         
         {/* Lord Ganesha & Sacred Blessings Banner */}
-        <div className="flex flex-col items-center justify-center mb-4">
+        <div className="flex flex-col items-center justify-center mb-4 mt-2 sm:mt-0">
           <div className="relative mb-2">
             <GaneshaIcon className="w-16 h-16 sm:w-20 sm:h-20 drop-shadow-md hover:scale-105 transition-transform" />
             <div className="absolute -inset-2 rounded-full bg-amber-400/25 blur-md -z-10 animate-pulse"></div>
@@ -139,7 +139,7 @@ export const Hero = ({ isTelugu, onOpenRsvp }) => {
                 {isTelugu ? 'శ్రీమతి ఎం. మంజుల & శ్రీ ఎం. సుబ్రమణ్యం రెడ్డి గారి సుపుత్రుడు' : 'Son of Smt M. Manjula & Sri M. Subramanyam Reddy'}
               </p>
               <p className="text-[10px] text-amber-300/60">
-                (Indian Bank), Vedurukuppam, Chittoor
+                (Indian Bank), Vedurukuppam
               </p>
             </div>
 

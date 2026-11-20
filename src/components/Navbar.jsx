@@ -41,18 +41,18 @@ export const Navbar = ({ isTelugu, setIsTelugu, onOpenRsvp }) => {
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         scrolled
           ? 'bg-[#1a0207]/95 backdrop-blur-md shadow-2xl py-2 border-b border-[#d4af37]/50'
-          : 'bg-[#140206]/85 backdrop-blur-sm py-3 border-b border-[#d4af37]/30'
+          : 'bg-[#140206]/85 backdrop-blur-sm py-2 sm:py-2.5 border-b border-[#d4af37]/30'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand / Logo */}
-        <a href="#" className="flex items-center gap-2 group">
-          <TirunamamIcon className="w-8 h-6 text-[#d4af37]" />
-          <div className="flex flex-col">
-            <span className="font-serif text-base sm:text-lg font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#ffe58f] via-[#d4af37] to-[#ffe58f] group-hover:brightness-110 transition-all">
+        <a href="#" className="flex items-center gap-2 group shrink min-w-0">
+          <TirunamamIcon className="w-7 h-5 sm:w-8 sm:h-6 text-[#d4af37] shrink-0" />
+          <div className="flex flex-col min-w-0">
+            <span className="font-serif text-sm sm:text-base md:text-lg font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#ffe58f] via-[#d4af37] to-[#ffe58f] group-hover:brightness-110 transition-all whitespace-nowrap leading-tight">
               Bhanu Prakash & Anusha
             </span>
-            <span className="text-[9px] tracking-widest uppercase font-semibold text-amber-300/80">
+            <span className="text-[8px] sm:text-[9px] tracking-widest uppercase font-semibold text-amber-300/80 truncate">
               {isTelugu ? 'కళ్యాణ మహోత్సవం' : 'Kalyanamasthu • 29 Nov 2026'}
             </span>
           </div>
@@ -119,7 +119,7 @@ export const Navbar = ({ isTelugu, setIsTelugu, onOpenRsvp }) => {
         </nav>
 
         {/* Mobile Header Controls */}
-        <div className="md:hidden flex items-center gap-2">
+        <div className="md:hidden flex items-center gap-1.5 shrink-0">
           {/* Mobile Music Toggle */}
           <button
             onClick={toggleMusic}
@@ -128,13 +128,13 @@ export const Navbar = ({ isTelugu, setIsTelugu, onOpenRsvp }) => {
             }`}
             aria-label="Toggle Wedding Music"
           >
-            {isPlaying ? <Volume2 className="w-4 h-4 text-amber-300" /> : <VolumeX className="w-4 h-4" />}
+            {isPlaying ? <Volume2 className="w-3.5 h-3.5 text-amber-300" /> : <VolumeX className="w-3.5 h-3.5" />}
           </button>
 
           {/* Mobile Language Toggle */}
           <button
             onClick={() => setIsTelugu(!isTelugu)}
-            className="px-2.5 py-1 rounded-full bg-[#2a040d] border border-[#d4af37]/70 text-[#f9e79f] text-[11px] font-semibold"
+            className="px-2 py-1 rounded-full bg-[#2a040d] border border-[#d4af37]/70 text-[#f9e79f] text-[10px] font-semibold"
           >
             {isTelugu ? 'ENG' : 'తెలుగు'}
           </button>
@@ -142,7 +142,7 @@ export const Navbar = ({ isTelugu, setIsTelugu, onOpenRsvp }) => {
           {/* Mobile RSVP */}
           <button
             onClick={onOpenRsvp}
-            className="px-3 py-1 rounded-full bg-gradient-to-r from-[#b8860b] via-[#d4af37] to-[#aa771c] text-[#35030d] text-[11px] font-bold"
+            className="px-2.5 py-1 rounded-full bg-gradient-to-r from-[#b8860b] via-[#d4af37] to-[#aa771c] text-[#35030d] text-[10px] font-bold"
           >
             RSVP
           </button>
@@ -150,7 +150,7 @@ export const Navbar = ({ isTelugu, setIsTelugu, onOpenRsvp }) => {
           {/* Mobile Hamburger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-1.5 text-amber-200 hover:text-white focus:outline-none"
+            className="p-1 text-amber-200 hover:text-white focus:outline-none"
             aria-label="Toggle Menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}

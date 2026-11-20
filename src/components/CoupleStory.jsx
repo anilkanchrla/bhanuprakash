@@ -49,7 +49,7 @@ export const CoupleStory = ({ isTelugu }) => {
       title: isTelugu ? 'వరపూజ & రిసెప్షన్' : 'Groom’s Grand Reception',
       desc: isTelugu
         ? 'వేదురుకుప్పం మండలం పి.ఆర్.సి. కన్వెన్షన్ హాల్ నందు వరుని కుటుంబ సభ్యుల ఆహ్వానంతో విందు.'
-        : 'Welcoming the newly wedded couple to Chittoor at P.R.C. Convention Centre, Vedurukuppam.',
+        : 'Welcoming the newly wedded couple at P.R.C. Convention Centre, Vedurukuppam.',
       icon: <Building2 className="w-5 h-5 text-emerald-600" />,
     },
   ];
@@ -109,7 +109,7 @@ export const CoupleStory = ({ isTelugu }) => {
                 </p>
                 <p className="flex items-center gap-1.5 text-amber-200/80">
                   <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                  <span>Chavatagunta, Vedurukuppam Mandal, Chittoor Dist.</span>
+                  <span>Chavatagunta, Vedurukuppam Mandal</span>
                 </p>
                 <p className="italic text-amber-200/90 bg-[#24040c] p-3 rounded-xl border-l-2 border-[#d4af37] mt-3 font-serif">
                   "Anusha's pure heart and brilliant grace make every dream worth working towards. Blessed to begin our forever journey together."

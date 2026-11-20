@@ -154,7 +154,7 @@ export const RSVPModal = ({ isOpen, onClose, isTelugu }) => {
                   />
                   <div className="text-xs">
                     <span className="font-bold text-amber-100">27 Nov: Haldi & Nalugu Ceremony (09:00 AM)</span>
-                    <span className="text-amber-300/70 block text-[11px]">P.R.C. Convention, Vedurukuppam, Chittoor</span>
+                    <span className="text-amber-300/70 block text-[11px]">P.R.C. Convention, Vedurukuppam</span>
                   </div>
                 </label>
 
@@ -193,7 +193,7 @@ export const RSVPModal = ({ isOpen, onClose, isTelugu }) => {
                   />
                   <div className="text-xs">
                     <span className="font-bold text-amber-100">06 Dec: Groom's Reception (11:00 AM)</span>
-                    <span className="text-amber-300/70 block text-[11px]">P.R.C. Convention, Vedurukuppam, Chittoor</span>
+                    <span className="text-amber-300/70 block text-[11px]">P.R.C. Convention, Vedurukuppam</span>
                   </div>
                 </label>
               </div>

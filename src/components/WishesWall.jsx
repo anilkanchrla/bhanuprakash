@@ -33,7 +33,7 @@ export const WishesWall = ({ isTelugu }) => {
       id: 4,
       name: 'Praneeth & Sai (Cousins)',
       relation: 'Bengaluru',
-      message: 'So excited for the Puttaparthi wedding and Chittoor reception! Waiting for the grand Talambralu showdown! Wishing you both a lifetime of adventures and joy.',
+      message: 'So excited for the Puttaparthi wedding and grand reception! Waiting for the grand Talambralu showdown! Wishing you both a lifetime of adventures and joy.',
       date: '3 days ago',
       isTeluguLang: false
     }
@@ -154,7 +154,7 @@ export const WishesWall = ({ isTelugu }) => {
                 </label>
                 <input
                   type="text"
-                  placeholder={isTelugu ? 'ఉదా: చిత్తూరు / స్నేహితుడు' : 'e.g., Bangalore / College Friend'}
+                  placeholder={isTelugu ? 'ఉదా: బెంగుళూరు / స్నేహితుడు' : 'e.g., Bangalore / College Friend'}
                   value={relation}
                   onChange={(e) => setRelation(e.target.value)}
                   className="w-full px-4 py-2.5 text-sm rounded-xl bg-[#140206] border border-[#d4af37]/50 text-amber-100 placeholder:text-amber-200/40 focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/20 outline-none transition-all"

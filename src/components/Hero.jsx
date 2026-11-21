@@ -168,12 +168,6 @@ export const Hero = ({ isTelugu, onOpenRsvp }) => {
               <p className="text-xs sm:text-sm text-rose-300 font-semibold mt-1">
                 PwC India
               </p>
-              <p className="text-[11px] text-amber-100/80 mt-1">
-                {isTelugu ? 'శ్రీమతి ఎం. హైమావతి & కీ.శే. శ్రీ ముమ్మనేని కృష్ణప్ప గార్ల ఏకైక కుమార్తె' : 'Only Daughter of Smt M. Hymavathi & Late Mummaneni Krishnappa'}
-              </p>
-              <p className="text-[10px] text-amber-300/60">
-                Peddakammavaripalli, Puttaparthi
-              </p>
             </div>
           </div>
         </div>

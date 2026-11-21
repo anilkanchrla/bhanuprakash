@@ -15,9 +15,9 @@ export const WishesWall = ({ isTelugu }) => {
     },
     {
       id: 2,
-      name: 'Mummaneni Family & Relatives',
-      relation: 'Peddakammavaripalli, Puttaparthi',
-      message: 'మా ప్రియమైన అనుష, భాను ప్రకాష్ ల కళ్యాణం అత్యంత వైభవంగా జరగాలని, నూరేళ్ళూ సుఖసంతోషాలతో జీవించాలని ఆ భగవంతుని ప్రార్థిస్తున్నాము.',
+      name: 'Mittapalli Family Well-Wishers',
+      relation: 'Chavatagunta, Vedurukuppam',
+      message: 'మా భాను ప్రకాష్, అనుష ల కళ్యాణం అత్యంత వైభవంగా జరగాలని, నూరేళ్ళూ సుఖసంతోషాలతో జీవించాలని ఆ భగవంతుని ప్రార్థిస్తున్నాము.',
       date: 'Yesterday',
       isTeluguLang: true
     },

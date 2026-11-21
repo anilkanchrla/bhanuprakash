@@ -16,8 +16,8 @@ export const CoupleStory = ({ isTelugu }) => {
       year: 'Family Concurrence',
       title: isTelugu ? 'పెద్దల నిశ్చయం & ఆశీస్సులు' : 'Elders’ Blessings & Astrological Harmony',
       desc: isTelugu
-        ? 'మిట్టపల్లి మరియు ముమ్మనేని పెద్దలు జాతక అనుకూలతతో నిశ్చయించి వివాహానికి ఆమోదం తెలిపారు.'
-        : 'The Mittapalli and Mummaneni families united in happiness, with the stars and elders blessing this auspicious union.',
+        ? 'మిట్టపల్లి కుటుంబ పెద్దలు జాతక అనుకూలతతో నిశ్చయించి వివాహానికి ఆమోదం తెలిపారు.'
+        : 'The Mittapalli family elders united in happiness, with the stars and elders blessing this auspicious union.',
       icon: <Award className="w-5 h-5 text-amber-600" />,
     },
     {
@@ -140,14 +140,6 @@ export const CoupleStory = ({ isTelugu }) => {
               </span>
 
               <div className="mt-4 pt-4 border-t border-[#d4af37]/30 w-full space-y-2 text-xs sm:text-sm text-amber-100">
-                <p>
-                  <strong className="text-[#f9e79f] font-medium">{isTelugu ? 'తల్లిదండ్రులు:' : 'Parents:'}</strong>{' '}
-                  Smt M. Hymavathi & Late Mummaneni Krishnappa
-                </p>
-                <p className="flex items-center gap-1.5 text-amber-200/80">
-                  <MapPin className="w-3.5 h-3.5 text-rose-400 shrink-0" />
-                  <span>Peddakammavaripalli Village, Puttaparthi Mandal, Sri Sathya Sai Dist.</span>
-                </p>
                 <p className="italic text-amber-200/90 bg-[#24040c] p-3 rounded-xl border-l-2 border-[#d4af37] mt-3 font-serif">
                   "In Bhanu Prakash, I found the most caring partner whose positivity, dedication, and affection make life truly beautiful."
                 </p>

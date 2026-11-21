@@ -65,6 +65,11 @@ export function App() {
         isTelugu={isTelugu} 
       />
 
+      {/* Host Family Section (Groom's Parents & Family Invitation) */}
+      <FamilySection 
+        isTelugu={isTelugu} 
+      />
+
       {/* Sacred Vedic Rituals */}
       <VedicRituals 
         isTelugu={isTelugu} 
@@ -77,11 +82,6 @@ export function App() {
 
       {/* Guestbook & Wishes Wall */}
       <WishesWall 
-        isTelugu={isTelugu} 
-      />
-
-      {/* Host Family Section */}
-      <FamilySection 
         isTelugu={isTelugu} 
       />
 
